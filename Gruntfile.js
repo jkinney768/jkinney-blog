@@ -4,7 +4,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
-    
+
     sass: {
         options: {
           style: 'compressed'
@@ -12,6 +12,19 @@ module.exports = function(grunt) {
         dist: {
             files: {
                 '_site/assets/styles/screen.css': 'assets/scss/screen.scss'
+            }
+        }
+    },
+
+    criticalcss: {
+        custom: {
+            options: {
+                url: "http://localhost:4000",
+                width: 1200,
+                height: 900,
+                outputfile: "_includes/critical.css",
+                filename: "_site/assets/styles/screen.css", // Using path.resolve( path.join( ... ) ) is a good idea here 
+                buffer: 800*1024
             }
         }
     },
@@ -49,13 +62,14 @@ module.exports = function(grunt) {
 
   });
 
-  // Load in grunt plugins
-  grunt.loadNpmTasks('grunt-sass');
-  grunt.loadNpmTasks('grunt-shell');
-  grunt.loadNpmTasks('grunt-contrib-watch');
+    // Load in grunt plugins
+    grunt.loadNpmTasks('grunt-sass');
+    grunt.loadNpmTasks('grunt-shell');
+    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-criticalcss');
 
-  // Grunt Tasks
-  grunt.registerTask('serve', ['shell:jekyllServe']);
-  grunt.registerTask('default', ['sass']);
+    // Grunt Tasks
+    grunt.registerTask('serve', ['shell:jekyllServe']);
+    grunt.registerTask('default', ['sass']);
 
 };
