@@ -11,7 +11,7 @@ module.exports = function(grunt) {
         },
         dist: {
             files: {
-                '_site/assets/styles/screen.css': 'assets/scss/screen.scss'
+                '_site/assets/css/modern.css': 'assets/scss/modern.scss'
             }
         }
     },
@@ -23,7 +23,7 @@ module.exports = function(grunt) {
                 width: 1200,
                 height: 900,
                 outputfile: "_includes/critical.css",
-                filename: "_site/assets/styles/screen.css", // Using path.resolve( path.join( ... ) ) is a good idea here 
+                filename: "_site/assets/css/modern.css", // Using path.resolve( path.join( ... ) ) is a good idea here 
                 buffer: 800*1024
             }
         }
