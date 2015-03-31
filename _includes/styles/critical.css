@@ -1,0 +1,11 @@
+html, body, div, a, header, nav{ margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-size: 100%; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; }
+body{ line-height: 1; }
+html{ overflow-y: scroll; }
+html{ }
+ header, nav{ display: block; }
+*{ box-sizing: border-box; }
+body{ margin-top: 80px; font-family: Lato, sans-serif; font-size: 16px; font-weight: 300; line-height: 1.4; color: rgb(67, 66, 66); }
+a{ color: rgb(39, 127, 211); text-decoration: none; -webkit-transition-property: all; -webkit-transition-duration: 0.15s; -webkit-transition-timing-function: initial; -webkit-transition-delay: initial; }
+@media (max-width: 980px){
+nav{ margin-top: 20px; max-height: 0px; overflow-x: hidden; overflow-y: hidden; background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: rgb(62, 62, 62); background-position: initial initial; background-repeat: initial initial; }
+}
