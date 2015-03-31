@@ -1,41 +1,41 @@
-/* ---------------------------------------------------------------------
-Base
------------------------------------------------------------------------- */
+// ---------------------------------------------
+// Base
+// ---------------------------------------------
 @import "base/_reset";
-
-
-/* ---------------------------------------------------------------------
-Helpers
------------------------------------------------------------------------- */
-@import "helpers/_vars";
-@import "helpers/_vendor";
 @import "base/_elements";
 
 
-/* ---------------------------------------------------------------------
-Landmarks
------------------------------------------------------------------------- */
-@import "landmarks/_masthead";
-@import "landmarks/_nav";
-@import "landmarks/_footer";
+// ---------------------------------------------
+// Landmarks
+// ---------------------------------------------
+@import "landmarks/masthead/_masthead";
+@import "landmarks/nav/_nav";
+@import "landmarks/footer/_footer";
 
 
-/* ---------------------------------------------------------------------
-Modules
------------------------------------------------------------------------- */
-@import "modules/_user-content";
-@import "modules/_blocks";
-@import "modules/_grid";
-@import "modules/_section";
-@import "modules/_feature";
-@import "modules/_headings";
-@import "modules/_post";
-@import "modules/_btns";
-@import "modules/_screenshot";
-@import "modules/_icons";
-@import "modules/_sidebar";
-@import "modules/_form";
-@import "modules/_pagination";
-@import "modules/_popular-post-lists";
-@import "modules/_hero";
-@import "modules/_syntax-highlighting";
+// ---------------------------------------------
+// Modules
+// ---------------------------------------------
+
+    // Containers
+    @import "modules/containers/section/_section";
+
+    // Content
+    @import "modules/content/btn/_btn";
+    @import "modules/content/form/_form";
+    @import "modules/content/hdg/_hdg";
+    @import "modules/content/highlight/_highlight";
+    @import "modules/content/icon/_icon";
+    @import "modules/content/pagination/_pagination";
+
+    // Layout
+    @import "modules/layout/blocks/_blocks";
+    @import "modules/layout/grid/_grid";
+
+    // Objects
+    @import "modules/objects/feature/_feature";
+    @import "modules/objects/post/_post";
+    @import "modules/objects/screenshot/_screenshot";
+    @import "modules/objects/sidebar/_sidebar";
+    @import "modules/objects/wppList/_wppList";
+    @import "modules/objects/hero/_hero";
