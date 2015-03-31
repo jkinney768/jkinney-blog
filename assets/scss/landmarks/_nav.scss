@@ -1,0 +1,182 @@
+/*********************
+VARIABLES
+**********************/
+$link-color: #ffffff;
+$link-hover: $brand;
+$link-vertical-padding: 0;      //Controls Menu top & bottom padding
+$link-horizontal-padding: 0;    //Contols Menu left & right padding
+$menu-background: #4B4B4B;        //Control Menu Color Scheme
+
+/*********************
+NAVIGATION STYLES
+**********************/
+nav {
+  
+  @include breakpoint(one) {
+    margin-top: 20px;
+    max-height:0;
+    overflow:hidden;
+    transition: all 0.5s ease;
+    background:darken($menu-background,5%);
+  }
+}
+
+nav ul {
+    overflow: hidden;
+    float: right;
+    margin: 0;
+    padding-top: 44px;
+    list-style: none;
+  
+   @include breakpoint(one) {
+      float: none;
+	    margin:0;
+      padding:0;
+	    z-index:15;
+    } 
+  
+  li {
+    float:left;
+    position:relative;
+    z-index:1;
+    
+    @include breakpoint(one) {
+      float:none;
+      position:relative;
+      margin:0;
+    }
+    
+    a {
+      display:block;
+      position: relative;
+      padding: $link-vertical-padding $link-horizontal-padding;
+      color:$link-color;
+      font-size: 14px; 
+      text-transform: uppercase;
+      text-decoration:none;
+      
+      
+      &:hover {
+        text-decoration: none;
+        color:$link-hover;
+        
+      }
+
+      @include breakpoint(one) {
+      	display:table;
+      	margin:0;
+    	padding:15px;
+        background: $menu-background;
+      	color:white;
+      	border-top:1px solid rgba(0,0,0,.15);
+        box-shadow:inset 0px 1px 3px rgba(255,255,255,.03);
+      	width:100%;
+      }
+    }
+    
+    &:hover ul {
+      opacity:1;
+      max-height:onepx;
+     
+      
+      @include breakpoint(one) {
+        max-height:0;
+      } 
+    }
+    
+    /******************
+    SUBNAV
+    ******************/
+    
+    ul {
+      background:darken($menu-background,10%);
+      list-style:none;
+      padding:0;
+      position:absolute;
+      width:200px;
+      max-height:0;
+      z-index:0;
+      opacity:0;
+      overflow:hidden;
+      font-size:.9em;
+      box-shadow:0px 2px 2px rgba(0,0,0,.5);
+      
+      
+      @include breakpoint(one) {
+        max-height:0;
+        opacity:1;
+        width:100%;
+        position:relative;
+        overflow:hidden;
+        box-shadow:inset 0px 2px 2px rgba(0,0,0,.5);
+        
+      }
+      
+      li {
+        float:none;
+        margin:0;
+
+        @include breakpoint(one) {
+          margin:0;
+        }
+        
+        a {
+          display:block;
+          text-align:left;
+          padding:$link-vertical-padding/1.5 15px;
+          margin:0;
+          border-right:none;
+          border-top:1px solid darken($menu-background,12%);
+          box-shadow:inset 0px 1px 3px rgba(255,255,255,.03);
+          text-transform:none;
+          
+          
+          &:hover {
+          	color:$link-hover;
+            background:lighten($menu-background,5%);
+          }
+
+          @include breakpoint(one) {
+          	color:white;
+          	padding-left:20px;
+          	background:none;
+          }
+        }
+      }
+    }
+  }
+}
+
+nav ul > * + * {
+  margin-left: 20px;
+}
+
+
+/***************************
+MOBILE NAV STYLES
+***************************/
+.mobile {
+  display:none;
+  margin:0;
+  padding:20px 15px;
+  position:absolute;
+  color:white;
+  font-size: 30px;
+  text-decoration:none;
+  top: 18px;
+  right:0;
+  line-height:0;
+  
+  @include breakpoint(one) {
+    display:table;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.active {
+  max-height:9000px !important;
+ }
+

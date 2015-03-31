@@ -1,0 +1,66 @@
+.masthead {
+    overflow: hidden;
+    padding: 15px;
+    width: 100%;
+    background: $brand_secondary;
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+
+    @include breakpoint(one) {
+        overflow: visible;
+    }
+}
+
+.masthead-contain {
+    overflow: hidden;
+    margin: 0 auto;
+    width: 960px;
+
+    @include breakpoint(one) {
+        overflow: visible;
+        width: 100%
+    }
+}
+
+.masthead-logo {
+  float: left;
+  width: 40%;
+
+  @include breakpoint(one) {
+    float: none;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.masthead-logo {
+    color: $brand;
+}
+
+.masthead-logo-name {
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: 500;
+    @include transition(all 0.15s);
+}
+
+.masthead-logo-name:hover {
+    color: $brand;
+    text-decoration: none;
+
+}
+
+.masthead-logo-title {
+    display: block;
+}
+
+.masthead-nav {
+    float: right;
+    width: 55%;
+
+    @include breakpoint(one) {
+        float: none;
+        width: 100%;
+    }
+}

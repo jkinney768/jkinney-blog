@@ -1,0 +1,85 @@
+.screenshot {
+  float:left;
+  margin-top:50px;
+  width:300px;
+  height:200px;
+  position:relative;
+  overflow:hidden;
+
+  @include breakpoint(one) {
+    width: 100%;
+    height: auto;
+  }
+
+  img {
+
+    @include breakpoint(one) {
+      width: 30%;
+    }
+
+    @include breakpoint(two) {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+  }
+}
+
+.screenshot-caption {
+    padding: 20px;
+  position:absolute;
+  width:300px;
+  height:200px;
+  background:rgba(13,45,76,0.9);
+  color:white;
+  transition: all 0.5s ease-out;
+
+  @include breakpoint(one) {
+    position: relative;
+    float: right;
+    width: 65%;
+    height: auto;
+  }
+
+  @include breakpoint(two) {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  
+  h1 {
+    color:white;
+  }
+
+  a {
+    display:table;
+    margin:0 auto; 
+    text-align:center;
+    padding:6px 12px;
+    color:white;
+    text-decoration:none;
+  }
+}
+
+.screenshot-caption_top {
+  top:-200px;
+  left:0;
+
+  @include breakpoint(one) {
+    top: 0;
+    right: 0;
+  }
+}
+
+.screenshot:hover .screenshot-caption_top {
+  top:0;
+  left:0;
+  transition: all 0.25s ease-out;
+}
+
+.screenshot-caption-hd {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.screenshot-caption-bd {
+    font-size: 14px;
+}

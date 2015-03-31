@@ -1,0 +1,62 @@
+/* ---------------------------------------------------------------------
+Grid Generator
+------------------------------------------------------------------------ */
+@mixin gridify($count,$gutter,$gridWidth:""){ 
+  
+  // calculates single grid item width
+  $oneGridItemWidth: 100 / $count; 
+  
+  //determines width of gutter if $gridWidth is defined
+  @if ($gridWidth != "") {
+    $gutter: ($gutter / $gridWidth) * 100;
+  }
+  
+  //calculates excess margin equally to the column count
+  $extra: $gutter / $count;
+  .grid {
+    //puts grid with to px if $gridWidth is defined
+    @if ($gridWidth != "") {
+      width: unquote($gridWidth + 'px');
+    }   
+    overflow: hidden;
+  }
+  .grid-item {
+    float: left;
+    box-sizing: border-box;
+  }
+  
+  //adds gutter and converts px gutters to % if $gridWidth is defined
+  .grid-item + .grid-item { 
+    margin-left: unquote($gutter + '%');
+      @include breakpoint(one) {
+        margin-left: 0;
+      }
+     }
+  
+  //The loop that creates all of your grid item classes and widths
+  @for $i from 1 through $count {
+    .grid-item_#{$i}of#{$count} {
+      width: unquote(($oneGridItemWidth * $i) - $gutter + ($extra * $i) + '%');
+
+      @include breakpoint(one) {
+        display: block;
+        width: 100%;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+/* ---------------------------------------------------------------------
+Define Grids
+------------------------------------------------------------------------ */
+
+@include gridify(12,2); //column count, gutter, optional grid width
+
+.grid_loose > * + * {
+  padding-left: 15px;
+
+  @include breakpoint(one) {
+    padding-left: 0;
+  }
+}

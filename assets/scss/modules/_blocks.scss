@@ -1,0 +1,41 @@
+/* ---------------------------------------------------------------------
+ Blocks
+------------------------------------------------------------------------ */
+
+.blocks {
+    overflow: hidden;
+    letter-spacing: 0;
+    line-height: 0;
+    list-style-type: none;
+    word-spacing: 0;
+}
+ 
+.blocks > * {
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    line-height: 1.231;
+    letter-spacing: normal;
+    word-spacing: normal;
+    vertical-align: top;
+}
+
+.blocks_tight {
+    margin-left: -2%;
+}
+
+.blocks_tight > * {
+    padding-left: 2%;
+}
+ 
+
+.blocks_center > * { text-align: center; }
+
+.blocks_3up > * { 
+    width: 33%; 
+    
+    @include breakpoint(one) {
+        display: block;
+        width: 100%;
+    }
+}

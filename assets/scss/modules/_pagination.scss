@@ -1,0 +1,19 @@
+.pagination {
+	padding: 10px 0;
+}
+
+.pagination span:first-of-type {
+	padding: 5px;
+	background: $brand;
+	color: #ffffff;
+	border-radius: 2px;
+}
+
+.current {
+	margin-left: 15px;
+}
+
+.inactive {
+	font-weight: 500;
+	margin-left: 15px;
+}

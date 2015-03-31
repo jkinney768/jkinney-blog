@@ -1,0 +1,42 @@
+.section {
+	overflow: hidden;
+	padding: 40px 0;
+}
+
+.section_intro {
+	margin-top: 94px;
+	background: url(../images/hero.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.section_medium { 
+	background: #f3f3f1; 
+	box-shadow: 0 -200px 300px rgba(0,0,0,0.5);
+}
+.section_dark { background: #000000; }
+
+.section-content {
+	margin: 0 auto;
+	width: 960px;
+
+	@include breakpoint(one) {
+		width: 100%;
+		padding: 0 30px;
+	}
+}
+
+.section-content-hd {
+	margin-bottom: 60px;
+
+	@include breakpoint(two) {
+		margin-bottom: 30px;
+	}
+}
+
+.section-content-ft {
+	margin-top: 25px;
+	text-align: center;
+}
