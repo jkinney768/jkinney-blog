@@ -1,20 +1,24 @@
-<!DOCTYPE html>
-<html>
+{% include head.html %}
 
-  {% include head.html %}
+<div class="page">
+    <div class="page-bd">
+        {% include landmarks/header.html %}
 
-  <body>
+        <div class="page-content">
+          <div class="wrapper">
+            {{ content }}
+          </div>
+        </div>
+    </div><!-- end page-bd -->
 
-    {% include landmarks/header.html %}
+    <div class="page-ft">
+        {% include landmarks/footer.html %}
+    </div><!-- end page-ft -->
+</div><!-- end page -->
 
-    <div class="page-content">
-      <div class="wrapper">
-        {{ content }}
-      </div>
-    </div>
+{% include scripts.html %}
 
-    {% include landmarks/footer.html %}
 
-  </body>
 
-</html>
+
+

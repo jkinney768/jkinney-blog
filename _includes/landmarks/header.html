@@ -1,20 +1,19 @@
-<header class="site-header">
+<header class="masthead" role="banner">
+    <div class="masthead-contain">
+        <div class="masthead-logo">
+            <a href="{{ site.baseurl }}" class="masthead-logo-name" title="Jason Kinney">Jason Kinney</a>
+            <span class="masthead-logo-title">Front-End Developer &amp; <span id="phrase"></span></span>
+        </div>
 
-  <div class="wrapper">
-
-    <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
-
-    <nav class="site-nav">
-
-      <div class="trigger">
-        {% for page in site.pages %}
-          {% if page.title %}
-          <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
-          {% endif %}
-        {% endfor %}
-      </div>
-    </nav>
-
-  </div>
-
+        <a class="mobile" href="#"></a>
+        <nav class="masthead-nav">
+            <ul>
+                <li><a href="{{ site.baseurl }}">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
 </header>
